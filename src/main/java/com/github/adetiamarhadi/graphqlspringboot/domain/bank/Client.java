@@ -1,14 +1,17 @@
 package com.github.adetiamarhadi.graphqlspringboot.domain.bank;
 
 import lombok.Builder;
-import lombok.Value;
+import lombok.Setter;
 
+import java.util.List;
 import java.util.UUID;
 
+@Setter
 @Builder
-@Value
-public class BankAccount {
+public class Client {
     UUID id;
+    String firstName;
+    List<String> middleNames;
+    String lastName;
     Client client;
-    Currency currency;
 }
