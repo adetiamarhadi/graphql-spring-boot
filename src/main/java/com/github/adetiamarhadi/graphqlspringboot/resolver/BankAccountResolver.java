@@ -16,24 +16,10 @@ public class BankAccountResolver implements GraphQLQueryResolver {
     public BankAccount bankAccount(UUID id) {
         log.info("Retrieving bank account id: {}", id);
 
-        var clientA = Client.builder()
-                .id(UUID.randomUUID())
-                .firstName("Adetia")
-                .lastName("Marhadi")
-                .build();
-
-        var clientB = Client.builder()
-                .id(UUID.randomUUID())
-                .firstName("Adetia")
-                .lastName("Marhadi II").build();
-
-        clientA.setClient(clientB);
-        clientB.setClient(clientA);
-
         return BankAccount.builder()
                 .id(id)
                 .currency(Currency.USD)
-                .client(clientA)
+                .client(Client.builder().id(UUID.randomUUID()).firstName("Adetia").lastName("Marhadi").build())
                 .build();
     }
 }
