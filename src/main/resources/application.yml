@@ -16,7 +16,7 @@ graphql:
       - name: Bank account sample query
         query: classpath:playground/bank_account.graphql
         variables: classpath:playground/bank_account_variables.json
-    enabled: false
+    enabled: true
 
 voyager:
   enabled: false

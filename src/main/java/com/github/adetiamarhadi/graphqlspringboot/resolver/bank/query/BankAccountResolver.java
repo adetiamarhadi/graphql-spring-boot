@@ -1,7 +1,6 @@
-package com.github.adetiamarhadi.graphqlspringboot.resolver;
+package com.github.adetiamarhadi.graphqlspringboot.resolver.bank.query;
 
 import com.github.adetiamarhadi.graphqlspringboot.domain.bank.BankAccount;
-import com.github.adetiamarhadi.graphqlspringboot.domain.bank.Client;
 import com.github.adetiamarhadi.graphqlspringboot.domain.bank.Currency;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +18,6 @@ public class BankAccountResolver implements GraphQLQueryResolver {
         return BankAccount.builder()
                 .id(id)
                 .currency(Currency.USD)
-                .client(Client.builder().id(UUID.randomUUID()).firstName("Adetia").lastName("Marhadi").build())
                 .build();
     }
 }
