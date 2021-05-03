@@ -5,11 +5,8 @@ import lombok.Value;
 
 import java.util.UUID;
 
-@Builder
 @Value
-public class BankAccount {
+@Builder
+public class Asset {
     UUID id;
-    Client client;
-    Currency currency;
-    Asset asset;
 }

@@ -9,16 +9,22 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.UUID;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Slf4j
 @Component
 public class ClientResolver implements GraphQLResolver<BankAccount> {
 
-    public DataFetcherResult<Client> client(BankAccount bankAccount) {
-        log.info("Requesting client data for bank account id {}", bankAccount.getId());
+    private final ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
-        return DataFetcherResult.<Client>newResult()
-                .data(Client.builder().id(UUID.randomUUID()).firstName("Adetia").lastName("Marhadi").build())
-                .error(new GenericGraphQLError("Could not get sub-client id")).build();
+    public CompletableFuture<Client> client(BankAccount bankAccount) {
+        log.info("Stop me debugging");
+
+        return CompletableFuture.supplyAsync(() -> {
+            log.info("Requesting client data for bank account id {}", bankAccount.getId());
+            return Client.builder().id(UUID.randomUUID()).firstName("Adetia").lastName("Marhadi").build();
+        }, executorService);
     }
 }
