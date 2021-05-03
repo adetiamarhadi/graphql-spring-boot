@@ -1,0 +1,4 @@
+# All mutations available in graphql
+type Mutation {
+    createBankAccount(input: CreateBankAccountInput!): BankAccount!
+}
