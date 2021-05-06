@@ -1,4 +1,7 @@
 scalar NonNegativeInt
+scalar DateTime
+scalar Date
+
 # All mutations available in graphql
 type Mutation {
     # Create a bank account
