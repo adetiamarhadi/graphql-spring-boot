@@ -3,6 +3,7 @@ spring:
     name: graphql-spring-boot
 
 server:
+  port: 8081
   http2:
     enabled: true
 
