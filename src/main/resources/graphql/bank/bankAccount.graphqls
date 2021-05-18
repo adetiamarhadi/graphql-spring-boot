@@ -5,4 +5,5 @@ type BankAccount {
     asset: Asset
     createdOn: Date
     createdAt: DateTime
+    balance: Float
 }

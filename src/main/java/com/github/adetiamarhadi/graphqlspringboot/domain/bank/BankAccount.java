@@ -3,6 +3,7 @@ package com.github.adetiamarhadi.graphqlspringboot.domain.bank;
 import lombok.Builder;
 import lombok.Value;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.UUID;
@@ -16,4 +17,5 @@ public class BankAccount {
     Asset asset;
     ZonedDateTime createdAt;
     LocalDate createdOn;
+    BigDecimal balance;
 }
