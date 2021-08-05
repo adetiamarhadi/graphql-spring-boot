@@ -22,7 +22,7 @@ public class LoggingListener implements GraphQLServletListener {
     public RequestCallback onRequest(HttpServletRequest request, HttpServletResponse response) {
 
         Instant startTime = Instant.now(clock);
-        log.info("Received graphql request");
+//        log.info("Received graphql request");
 
         return new RequestCallback() {
             @Override
@@ -37,7 +37,7 @@ public class LoggingListener implements GraphQLServletListener {
 
             @Override
             public void onFinally(HttpServletRequest request, HttpServletResponse response) {
-                log.info("Completed Request. Time Taken: {}", Duration.between(startTime, Instant.now(clock)));
+//                log.info("Completed Request. Time Taken: {}", Duration.between(startTime, Instant.now(clock)));
             }
         };
     }
