@@ -24,7 +24,12 @@ public class ClientResolver implements GraphQLResolver<BankAccount> {
 
         return CompletableFuture.supplyAsync(() -> {
             log.info("Requesting client data for bank account id {}", bankAccount.getId());
-            return Client.builder().id(UUID.randomUUID()).firstName("Adetia").lastName("Marhadi").build();
+            return Client.builder()
+//                    .id(UUID.randomUUID())
+                    .id(bankAccount.getId())
+                    .firstName("Adetia")
+                    .lastName("Marhadi")
+                    .build();
         }, executorService);
     }
 }

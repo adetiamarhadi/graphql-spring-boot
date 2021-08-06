@@ -1,0 +1,15 @@
+{
+  "data": {
+    "bankAccount": {
+      "id": "e5f69958-3046-422b-9661-3e36e16f5851",
+      "currency": "USD",
+      "createdOn": "2021-08-06",
+      "createdAt": "2021-08-06T00:00:00Z",
+      "client": {
+        "id": "e5f69958-3046-422b-9661-3e36e16f5851",
+        "firstName": "Adetia",
+        "lastName": "Marhadi"
+      }
+    }
+  }
+}
